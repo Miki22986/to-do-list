@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --primary-color: rgb(201, 167, 173); 
+    --secondary-color: rgb(79, 79, 79);
+}
+body{
+    background-color: var(--primary-color);
+}
+
+.sour-gummy {
+  font-family: "Sour Gummy", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.container{
+    max-width: 450px;
+    margin: 50px auto;
+    background-color: rgba(255, 255, 255, 0.785);
+}
