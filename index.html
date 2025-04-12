@@ -11,18 +11,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container rounded p-2 sour-gummy">
-        <header class="row">
-            <div class="col-2">
-                <img src="" alt="">
-            </div>
-            <div class="col-10">
-                <h1>My new to-do-list</h1>
-                <p>Aggiungi ogni elemento cliccando sul tasto e toglilo cliccando sull'elemento</p>  
+    <div class="container rounded-5 p-2 sour-gummy shadow">
+        <header class="rounded-4 m-2 p-2">
+            <div class="row">
+                <div class="col-2">
+                    <img src="img/yo-do.gif" alt="" id="point">
+                </div>
+                <div class="col-9">
+                    <h1>Lista della spesa</h1> 
+                </div>
+                <p class="text-center fs-5">Aggiungi ogni elemento cliccando sul tasto e toglilo cliccando sull'elemento</p> 
             </div>
         </header>
         <main>
-            <section>
+            <section class="list-space rounded-4 p-3 m-2">
                 <div>
                     <ul>
                         <li></li>
@@ -32,10 +34,10 @@
                     </ul>
                 </div>   
             </section>
-            <section>
-                <form action="">
-                    <input type="text">
-                    <input type="button" value="submit">
+            <section class="m-2">
+                <form action="" class="d-flex justify-content-between">
+                    <input type="text" class="col p-2 rounded-4 border border-danger-subtle  me-2" maxlength="10" minlength="2" >
+                    <input type="button" value="submit" class="col-3 p-2 rounded-4 border border-danger-subtle">
                 </form>  
             </section>
         </main>

@@ -4,13 +4,15 @@
     box-sizing: border-box;
 }
 :root{
-    --primary-color: rgb(201, 167, 173); 
-    --secondary-color: rgb(79, 79, 79);
+    --primary-color: rgb(240, 180, 132); 
+    --secondary-color: rgba(253, 254, 255, 0.7);
 }
 body{
     background-color: var(--primary-color);
 }
-
+li{
+    list-style: none;
+}
 .sour-gummy {
   font-family: "Sour Gummy", sans-serif;
   font-optical-sizing: auto;
@@ -21,7 +23,17 @@ body{
 }
 
 .container{
-    max-width: 450px;
+    max-width: 500px;
     margin: 50px auto;
-    background-color: rgba(255, 255, 255, 0.785);
+    background-color: var(--secondary-color);
+}
+.list-space, header {
+    background-color: var(--secondary-color);
+}
+.list-space{
+        min-height: 300px;
+}
+#point{
+    display: block;
+    max-width: 65px;
 }
