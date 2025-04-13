@@ -5,12 +5,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const text = document.querySelector("#text");
   const button = document.querySelector("#additemli");
 
-  loadItems();
   function addTask(event) {
     event.preventDefault();
     const elementList = text.value.trim();
     if (elementList) {
       aggiungi(elementList);
+      saveElements(); //aggiunta funzione per salvare gli elementi(aggiunta molto dopo)
       text.value = ""; //se l'elemento è stato aggiunto svuota il campo
     } else {
       alert("aggiungi un elemento");
@@ -28,8 +28,15 @@ document.addEventListener("DOMContentLoaded", () => {
     deleteButton.addEventListener("click", function () {
       todoList.removeChild(ListItem);
     });
+    cancellaSingolo(ListItem);
   }
-  //la funzione sotto mette ciò che abbiamo inserito dentro il local store
+
+  function cancellaSingolo(ListItem) {
+    ListItem.addEventListener("click", function () {
+      this.remove();
+    });
+  }
+  //la funzione sotto mette ciò che abbiamo inserito dentro il local store e lo rende visibile
   function saveElements() {
     const elementList = [];
     todoList.querySelectorAll("li").forEach(function (item) {
@@ -37,10 +44,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     localStorage.setItem("elementList", JSON.stringify(elementList));
   }
-
   //lo riprende e lo mostra
   function loadItems() {
     const Items = JSON.parse(localStorage.getItem("elementList")) || [];
     Items.forEach(aggiungi);
   }
+  loadItems();
 });
