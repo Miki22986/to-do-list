@@ -22,7 +22,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const ListItem = document.createElement("li"); //per creare elementi li
     ListItem.textContent = elementList; // Inserisce solo testo, ignora eventuali tag HTML.
     todoList.appendChild(ListItem); //attacca il li alla ul
+
+    const deleteButton = document.querySelector("#cancella");
+    deleteButton.addEventListener("click", function () {
+      todoList.removeChild(ListItem);
+    });
   }
+
   function saveElements() {
     const elementList = [];
     todoList.querySelectorAll("li").forEach(function (item) {
