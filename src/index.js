@@ -24,11 +24,14 @@ document.addEventListener("DOMContentLoaded", () => {
     ListItem.textContent = elementList; // Inserisce solo testo, ignora eventuali tag HTML.
     todoList.appendChild(ListItem); //attacca il li alla ul
 
+    CancellaTutto(ListItem);
+    cancellaSingolo(ListItem);
+  }
+  function CancellaTutto(ListItem) {
     const deleteButton = document.querySelector("#cancella");
     deleteButton.addEventListener("click", function () {
       todoList.removeChild(ListItem);
     });
-    cancellaSingolo(ListItem);
   }
 
   function cancellaSingolo(ListItem) {
@@ -38,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   //la funzione sotto mette ciò che abbiamo inserito dentro il local store e lo rende visibile
   function saveElements() {
+    //dichiara come variabile un array vuoto in cui inserire i li
     const elementList = [];
     todoList.querySelectorAll("li").forEach(function (item) {
       elementList.push(item.textContent.trim());
