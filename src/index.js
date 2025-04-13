@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const text = document.querySelector("#text");
   const button = document.querySelector("#additemli");
 
+  loadItems();
   function addTask(event) {
     event.preventDefault();
     const elementList = text.value.trim();
@@ -28,12 +29,18 @@ document.addEventListener("DOMContentLoaded", () => {
       todoList.removeChild(ListItem);
     });
   }
-
+  //la funzione sotto mette ciò che abbiamo inserito dentro il local store
   function saveElements() {
     const elementList = [];
     todoList.querySelectorAll("li").forEach(function (item) {
       elementList.push(item.textContent.trim());
     });
     localStorage.setItem("elementList", JSON.stringify(elementList));
+  }
+
+  //lo riprende e lo mostra
+  function loadItems() {
+    const Items = JSON.parse(localStorage.getItem("elementList")) || [];
+    Items.forEach(aggiungi);
   }
 });
