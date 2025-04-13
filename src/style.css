@@ -11,7 +11,7 @@ body{
     background-color: var(--primary-color);
 }
 li{
-    list-style: none;
+    list-style: circle;
 }
 .sour-gummy {
   font-family: "Sour Gummy", sans-serif;
