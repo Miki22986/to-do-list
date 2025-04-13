@@ -12,6 +12,7 @@ body{
 }
 li{
     list-style: circle;
+    font-size: 25px;
 }
 .sour-gummy {
   font-family: "Sour Gummy", sans-serif;

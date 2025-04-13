@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const todoList = document.querySelector(".todo-list");
   const emptyListMess = document.querySelector(".empty-list-message");
   const text = document.querySelector("#text");
-  const button = document.querySelector("button");
+  const button = document.querySelector("#additemli");
 
   function addTask(event) {
     event.preventDefault();
@@ -22,5 +22,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const ListItem = document.createElement("li"); //per creare elementi li
     ListItem.textContent = elementList; // Inserisce solo testo, ignora eventuali tag HTML.
     todoList.appendChild(ListItem); //attacca il li alla ul
+  }
+  function saveElements() {
+    const elementList = [];
+    todoList.querySelectorAll("li").forEach(function (item) {
+      elementList.push(item.textContent.trim());
+    });
+    localStorage.setItem("elementList", JSON.stringify(elementList));
   }
 });
