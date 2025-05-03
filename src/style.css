@@ -11,7 +11,7 @@ body{
     background-color: var(--primary-color);
 }
 li{
-    list-style: circle;
+    list-style-image: url("../img/yo-do-li.gif");
     font-size: 25px;
 }
 .sour-gummy {
